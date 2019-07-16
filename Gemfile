@@ -7,6 +7,8 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'fast_jsonapi'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -18,6 +20,7 @@ group :test do
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.1'
   gem 'faker', '~> 1.9', '>= 1.9.6'
   gem 'database_cleaner', '~> 1.7'
+  gem 'simplecov', require: false
 end
 
 group :development do
