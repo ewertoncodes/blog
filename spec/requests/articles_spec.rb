@@ -123,5 +123,9 @@ RSpec.describe 'Articles API', type: :request do
 
       expect(response).to have_http_status(:no_content)
     end
+
+    it 'destroys the article' do
+      expect{delete "/articles/#{article_id}"}.to change(Article, :count).by(-1)
+    end
   end
 end
