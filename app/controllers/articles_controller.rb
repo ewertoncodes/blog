@@ -2,13 +2,13 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = current_user.articles.all
 
     json_response @articles
   end
 
   def create
-    @article = Article.create!(article_params)
+    @article = current_user.articles.create!(article_params)
 
     json_response @article, :created
   end
@@ -35,6 +35,6 @@ class ArticlesController < ApplicationController
     end
 
     def set_article
-      @article = Article.find(params[:id])
+      @article = current_user.articles.find(params[:id])
     end
 end
