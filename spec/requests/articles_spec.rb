@@ -13,7 +13,7 @@ RSpec.describe 'Articles API', type: :request do
 
     it "returns a list of articles" do
       get '/articles'
-
+      
       expect(JSON.parse(response.body).size).to eq(10)
     end 
   end
@@ -82,7 +82,7 @@ RSpec.describe 'Articles API', type: :request do
     context "ok" do
       let(:article) { articles.first }
       
-      it 'returns status ok' do
+      it 'returns status no_contentk' do
         
         patch "/articles/#{article_id}", params: { title:"title-1", text: "olá mundo" }
         
