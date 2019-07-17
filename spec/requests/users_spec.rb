@@ -12,7 +12,7 @@ RSpec.describe 'Users API', type: :request do
       before { post '/signup', params: valid_attributes.to_json, headers: headers }
 
       it 'creates a new user' do
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(:created)
       end
 
       it 'returns success message' do
@@ -32,7 +32,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns failure message' do
-        expect(json['message'])
+        expect(JSON.parse(response.body)['message'])
           .to match(/Validation failed: Password can't be blank, Name can't be blank, Email can't be blank, Password digest can't be blank/)
       end
     end

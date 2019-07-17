@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  skip_before_action :authorize_request
   before_action :set_article
   before_action :set_comment, only: [:update, :destroy]
 
