@@ -2,14 +2,12 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy]
 
   def index
-    @articles = current_user.articles.all
-
+    @articles = current_user.articles.paginate(page: params[:page], per_page: 30)
     json_response @articles
   end
 
   def create
     @article = current_user.articles.create!(article_params)
-
     json_response @article, :created
   end
 
