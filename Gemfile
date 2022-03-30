@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'fast_jsonapi'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
